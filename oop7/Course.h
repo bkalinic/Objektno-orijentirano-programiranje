@@ -11,12 +11,14 @@ private:
 	int password;
 	int ects;
 public:
-	Course(string n, int p, int e);
+	Course(string n = "course", int p = 12345, int e = 0);
 
 	string getName() const;
+	int getPass() const;
 	int getEcts() const;
 
 	void setName(string n);
+	void setPass(int p);
 	void setEcts(int e);
 };
 
