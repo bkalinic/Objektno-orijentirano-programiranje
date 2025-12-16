@@ -2,17 +2,25 @@
 #define PLAYER_H
 
 #include "GameCharacter.h"
-#include "Enemy.h"
+#include <string>
+
+using namespace std;
+
+class Enemy;
 
 class Player : public GameCharacter {
 protected:
 	int score;
 public:
-	Player(int h, string n, int s);
+	Player(int h, const std::string n);
 	virtual ~Player();
 
 	virtual void attackEnemy(Enemy* target) = 0;
 	void addScore(int amount);
+
+	int getScore() const;
+
+	void displayStatus() const override;
 };
 
 #endif

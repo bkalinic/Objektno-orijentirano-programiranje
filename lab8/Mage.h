@@ -1,21 +1,20 @@
-#ifndef WARRIOR_H
-#define WARRIOR_H
+#ifndef MAGE_H
+#define MAGE_H
 
 #include "Player.h"
 #include <string>
 
-class Warrior : public Player {
+class Mage : public Player {
 private:
-	bool shield;
+	int mana;
 public:
-	Warrior(const std::string n);
-	~Warrior();
+	Mage(const std::string n);
+	~Mage();
 
 	void attackEnemy(Enemy* target) override;
 	void specialAbility() override;
-	void takeDamage(int amount) override;
-
 	void displayStatus() const override;
+	int getMana() const;
 };
 
 #endif

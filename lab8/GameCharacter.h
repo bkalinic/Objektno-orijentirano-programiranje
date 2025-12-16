@@ -8,16 +8,20 @@ using namespace std;
 class GameCharacter {
 protected:
 	int health;
-	string name;
+	std::string name;
 public:
-	GameCharacter(int h, string n);
-	virtual ~GameCharacter();
+	GameCharacter(int h, const std::string n);
+	virtual ~GameCharacter() = 0;
 
-	virtual void displayStatus() = 0;
+	virtual void displayStatus() const = 0;
 	virtual void specialAbility() = 0;
 
-	void takeDamage(int amount);
+	virtual void takeDamage(int amount);
 	bool isAlive();
+
+	int getHealth() const;
+	std::string getName() const;
+	void setHealth(int i);
 };
 
 #endif

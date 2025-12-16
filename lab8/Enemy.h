@@ -3,6 +3,9 @@
 
 #include "GameCharacter.h"
 #include "Player.h"
+#include <iostream>
+
+using namespace std;
 
 class Enemy : public GameCharacter {
 protected:
@@ -12,6 +15,9 @@ public:
 	virtual ~Enemy();
 
 	virtual void attackPlayer(Player* target) = 0;
+	int getDifficulty() const;
+
+	void displayStatus() const override;
 };
 
 #endif
