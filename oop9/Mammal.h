@@ -1,13 +1,18 @@
 #ifndef MAMMAL_H
 #define MAMMAL_H
 
-#include "Animal.h"
-class Mammal : public Animal {
+#include "animal.h"
+#include <string>
+
+class Mammal : virtual public Animal {
 protected:
-	bool hasFur;
+    bool hasFur;
+
 public:
-	Mammal();
-	~Mammal();
+    Mammal(const std::string& name, int age, double weight, bool hasFur);
+    virtual ~Mammal() = default;
+
+    bool getHasFur() const;
 };
 
 #endif

@@ -7,16 +7,19 @@
 
 class Animal {
 protected:
-	std::string ime;
-	int godine;
-	int tezina;
+	std::string name;
+	int age;
+	int weight;
+
+	Animal(std::string n, int g, int t);
 public:
-	Animal(std::string i, int g, int t);
-	virtual ~Animal();
+	virtual ~Animal() = default;
 
 	virtual std::string getSpecies() const = 0;
 	virtual double getDailyFood() const = 0;
-	virtual std::string getName() const = 0;
+	virtual std::string getName() const;
+	int getAge() const;
+	double getWeight() const;
 };
 
 #endif
